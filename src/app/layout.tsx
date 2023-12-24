@@ -1,13 +1,16 @@
 import { Metadata } from 'next';
+import { getServerSession } from 'next-auth';
 import * as React from 'react';
 
 import '@/styles/globals.css';
 import '@/styles/colors.css';
 
-import { siteConfig } from '@/constant/config';
+import { siteConfig } from '@/config/site';
+import NextAuthSessionProvider from '@/providers/session-provider';
 import { TrpcProvider } from '@/providers/trpc-provider';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.title,
     template: `%s | ${siteConfig.title}`,
@@ -44,11 +47,14 @@ export const metadata: Metadata = {
   ],
 };
 
-function RootLayout({ children }: { children: React.ReactNode }) {
+async function RootLayout({ children }: { children: React.ReactNode }) {
+  const session = await getServerSession();
   return (
     <html lang='en'>
       <body>
-        <TrpcProvider>{children}</TrpcProvider>
+        <NextAuthSessionProvider session={session}>
+          <TrpcProvider>{children}</TrpcProvider>
+        </NextAuthSessionProvider>
       </body>
     </html>
   );

@@ -6,14 +6,6 @@ import GoogleProvider from 'next-auth/providers/google';
 import { prismaInstance } from '@/prisma';
 
 export const authOptions: AuthOptions = {
-  callbacks: {
-    session(params) {
-      if (params?.session?.user?.id) {
-        params.session.user.id = params?.user?.id;
-      }
-      return params.session;
-    },
-  },
   adapter: PrismaAdapter(prismaInstance) as Adapter,
   providers: [
     GoogleProvider({
@@ -28,4 +20,8 @@ export const authOptions: AuthOptions = {
       },
     }),
   ],
+  session: {
+    strategy: 'database',
+    maxAge: 30 * 24 * 60 * 60, // 30 days
+  },
 };
