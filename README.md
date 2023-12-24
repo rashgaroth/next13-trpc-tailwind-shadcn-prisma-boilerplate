@@ -26,6 +26,9 @@ This repository is 🔋 battery packed with:
 - 📦 Expansion Pack — Easily install common libraries, additional components, and configs.
 - 🛜 tRPC - Type-Safe API Calls
 - 📂 Prisma - intuitive data model, automated migrations, type-safety & auto-completion
+- 📈 React Query - Performant and powerful data synchronization for React
+- 📦 React Query Devtools - Devtools for React Query
+- ✌🏼 SaaS support - Easily add SaaS support to your app
 
 ## Getting Started
 
@@ -78,4 +81,4 @@ Don't forget to change the package name in package.json
 ### 5. Special Shoutout 🔥
 
 - [Theodorus Clarence](https://theodorusclarence.com)
-- [Next + Tailwind + Typescript boilerplate](https://github.com/theodorusclarence/ts-nextjs-tailwind-starter)
+- [Next + Tailwind + Typescript starter & boilerplate](https://github.com/theodorusclarence/ts-nextjs-tailwind-starter)
