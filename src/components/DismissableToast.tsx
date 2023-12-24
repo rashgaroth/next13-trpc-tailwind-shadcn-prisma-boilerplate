@@ -24,7 +24,7 @@ export default function DismissableToast() {
                 {message}
                 {t.type !== 'loading' && (
                   <button
-                    className='p-1 transition rounded-full hover:bg-[#444] focus-visible:ring ring-primary-400 focus:outline-none'
+                    className='ring-primary-400 rounded-full p-1 transition hover:bg-[#444] focus:outline-none focus-visible:ring'
                     onClick={() => toast.dismiss(t.id)}
                   >
                     <HiX />

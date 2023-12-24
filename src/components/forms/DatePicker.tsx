@@ -65,7 +65,7 @@ export default function DatePicker({
                     ? 'cursor-not-allowed border-gray-300 bg-gray-100 focus:border-gray-300 focus:ring-0'
                     : error
                     ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
-                    : 'border-gray-300 focus:border-primary-500 focus:ring-primary-500',
+                    : 'focus:border-primary-500 focus:ring-primary-500 border-gray-300',
                   'block w-full rounded-md shadow-sm'
                 )}
                 placeholderText={placeholder}

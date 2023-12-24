@@ -56,18 +56,18 @@ export default function FilePreview({
         className='flex items-center justify-between py-3 pl-3 pr-4 text-sm'
         key={file.name}
       >
-        <div className='flex items-center flex-1 w-0'>
+        <div className='flex w-0 flex-1 items-center'>
           <HiOutlinePhotograph
-            className='flex-shrink-0 w-5 h-5 text-gray-400'
+            className='h-5 w-5 flex-shrink-0 text-gray-400'
             aria-hidden='true'
           />
-          <span className='flex-1 w-0 ml-2 truncate'>{file.name}</span>
+          <span className='ml-2 w-0 flex-1 truncate'>{file.name}</span>
         </div>
-        <div className='flex items-center flex-shrink-0 ml-4 space-x-2'>
+        <div className='ml-4 flex flex-shrink-0 items-center space-x-2'>
           <button
             type='button'
             onClick={() => setIsOpen(true)}
-            className='inline-block text-xl font-medium text-gray-500 rounded focus:outline-none focus:ring focus:ring-primary-500 hover:text-gray-700'
+            className='focus:ring-primary-500 inline-block rounded text-xl font-medium text-gray-500 hover:text-gray-700 focus:outline-none focus:ring'
           >
             <HiOutlineEye />
           </button>
@@ -75,7 +75,7 @@ export default function FilePreview({
             <button
               type='button'
               onClick={handleDelete}
-              className='text-xl font-medium text-red-500 rounded focus:outline-none focus:ring focus:ring-red-500 hover:text-red-700'
+              className='rounded text-xl font-medium text-red-500 hover:text-red-700 focus:outline-none focus:ring focus:ring-red-500'
             >
               <HiX />
             </button>
@@ -104,23 +104,23 @@ export default function FilePreview({
       key={file.name}
       className='flex items-center justify-between py-3 pl-3 pr-4 text-sm'
     >
-      <div className='flex items-center flex-1 w-0'>
+      <div className='flex w-0 flex-1 items-center'>
         <HiOutlinePaperClip
-          className='flex-shrink-0 w-5 h-5 text-gray-400'
+          className='h-5 w-5 flex-shrink-0 text-gray-400'
           aria-hidden='true'
         />
-        <span className='flex-1 w-0 ml-2 truncate'>{file.name}</span>
+        <span className='ml-2 w-0 flex-1 truncate'>{file.name}</span>
       </div>
-      <div className='flex items-center flex-shrink-0 ml-4 space-x-2'>
+      <div className='ml-4 flex flex-shrink-0 items-center space-x-2'>
         <UnstyledLink
           href={file.preview}
-          className='text-gray-500 rounded focus:outline-none focus:ring focus:ring-primary-500 hover:text-gray-700'
+          className='focus:ring-primary-500 rounded text-gray-500 hover:text-gray-700 focus:outline-none focus:ring'
         >
           <HiOutlineExternalLink size={20} />
         </UnstyledLink>
         {!readOnly && (
           <button
-            className='text-red-500 rounded cursor-pointer focus:outline-none focus:ring focus:ring-red-500 hover:text-red-700'
+            className='cursor-pointer rounded text-red-500 hover:text-red-700 focus:outline-none focus:ring focus:ring-red-500'
             type='button'
             onClick={(e) => deleteFile?.(e, file)}
           >

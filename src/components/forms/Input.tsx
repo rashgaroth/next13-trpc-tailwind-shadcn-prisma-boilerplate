@@ -59,10 +59,10 @@ export default function Input({
           readOnly={readOnly}
           className={clsx(
             readOnly
-              ? 'bg-gray-100 focus:ring-0 cursor-not-allowed border-gray-300 focus:border-gray-300'
+              ? 'cursor-not-allowed border-gray-300 bg-gray-100 focus:border-gray-300 focus:ring-0'
               : errors[id]
-              ? 'focus:ring-red-500 border-red-500 focus:border-red-500'
-              : 'focus:ring-primary-500 border-gray-300 focus:border-primary-500',
+              ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
+              : 'focus:ring-primary-500 focus:border-primary-500 border-gray-300',
             'block w-full rounded-md shadow-sm'
           )}
           placeholder={placeholder}
@@ -70,7 +70,7 @@ export default function Input({
         />
 
         {!hideError && errors[id] && (
-          <div className='absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none'>
+          <div className='pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3'>
             <HiExclamationCircle className='text-xl text-red-500' />
           </div>
         )}
@@ -78,7 +78,9 @@ export default function Input({
       <div className='mt-1'>
         {helperText && <p className='text-xs text-gray-500'>{helperText}</p>}
         {!hideError && errors[id] && (
-          <span className='text-sm text-red-500'>{errors[id]?.message as unknown as string}</span>
+          <span className='text-sm text-red-500'>
+            {errors[id]?.message as unknown as string}
+          </span>
         )}
       </div>
     </div>
