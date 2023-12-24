@@ -29,6 +29,7 @@ This repository is 🔋 battery packed with:
 - 📈 React Query - Performant and powerful data synchronization for React
 - 📦 React Query Devtools - Devtools for React Query
 - ✌🏼 SaaS support - Easily add SaaS support to your app
+- 🔑 NextAuth.js - Authentication for Next.js
 
 ## Getting Started
 
