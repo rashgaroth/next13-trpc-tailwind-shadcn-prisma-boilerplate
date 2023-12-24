@@ -1,10 +1,11 @@
-import { PrismaAdapter } from '@next-auth/prisma-adapter';
-import { NextAuthOptions } from 'next-auth';
+import { PrismaAdapter } from '@auth/prisma-adapter';
+import { AuthOptions } from 'next-auth';
+import { Adapter } from 'next-auth/adapters';
 import GoogleProvider from 'next-auth/providers/google';
 
 import { prismaInstance } from '@/prisma';
 
-export const authOptions: NextAuthOptions = {
+export const authOptions: AuthOptions = {
   callbacks: {
     session(params) {
       if (params?.session?.user?.id) {
@@ -13,7 +14,7 @@ export const authOptions: NextAuthOptions = {
       return params.session;
     },
   },
-  adapter: PrismaAdapter(prismaInstance),
+  adapter: PrismaAdapter(prismaInstance) as Adapter,
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID as string,
